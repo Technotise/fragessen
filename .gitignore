@@ -1,0 +1,40 @@
+# =============================================================
+# FragEssen — Secrets, Laufzeitdaten und Build-Artefakte
+# =============================================================
+
+# --- Secrets & Instanz-Konfiguration ---
+System_1/httpdocs/src/config.php
+System_3/httpdocs/config.php
+**/.env
+!**/.env.example
+**/.envclear
+
+# --- System 1: Ingest ---
+System_1/httpdocs/_secret/
+System_1/httpdocs/py_pkgs/
+System_1/httpdocs/vendor/
+System_1/httpdocs/storage/pdf/**
+!System_1/httpdocs/storage/pdf/.gitkeep
+System_1/httpdocs/var/
+System_1/httpdocs/test_sftp.php
+
+# --- System 2: RAG-Backend ---
+System_2/ingest/
+**/last_conversation.json
+**/last_retrieve.json
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# --- System 3: Frontend (instanzspezifische Rechtstexte) ---
+System_3/httpdocs/pages/impressum.html
+System_3/httpdocs/pages/datenschutz_fragessen.html
+System_3/httpdocs/pages/datenschutz_umfrage.html
+System_3/httpdocs/error_log
+
+# --- Betriebssystem / Editor / Logs ---
+.DS_Store
+Thumbs.db
+*.log
+Ausgabe.txt
