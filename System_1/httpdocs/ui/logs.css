@@ -1,0 +1,14 @@
+.log-table tr.log-main { cursor: pointer; }
+.log-table tr.log-main:focus { outline: 2px solid rgba(255,193,7,.55); outline-offset: -2px; }
+
+.log-table tr.log-details { display: none; }
+.log-table tr.log-details.open { display: table-row; }
+
+.log-pre {
+  margin-top: 0.6rem;
+  white-space: pre-wrap;
+}
+
+[data-theme="dark"] .log-table tr.log-main:hover {
+  background: rgba(255,255,255,.04);
+}

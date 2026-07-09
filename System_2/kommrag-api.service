@@ -1,0 +1,23 @@
+[Unit]
+Description=KommRAG API (FragEssen System 2, FastAPI/uvicorn)
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=kommrag
+Group=kommrag
+WorkingDirectory=/home/kommrag/web_api
+# .env wird von app.py selbst geladen (python-dotenv, relativ zum Skript)
+ExecStart=/home/kommrag/.venv/bin/uvicorn app:app --host 127.0.0.1 --port 8000
+Restart=on-failure
+RestartSec=5
+
+# Härtung
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target

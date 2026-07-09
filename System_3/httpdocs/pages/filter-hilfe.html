@@ -1,0 +1,69 @@
+<!--
+  pages/filter-hilfe.html
+  Erklärung der Filteroptionen in FragEssen.
+  Wird ausschließlich in /index.php eingebunden.
+-->
+<h2>Filter-Hilfe</h2>
+
+<p>Mit den Filtern in der Seitenleiste (⚙) kannst du die Suche gezielt eingrenzen:</p>
+
+<h3>Gremium</h3>
+<p>
+  Wähle ein bestimmtes Gremium (z.&nbsp;B. Rat, ARSO, Bezirksvertretung), um nur Protokolle
+  dieses Gremiums zu durchsuchen. „Alle Gremien" durchsucht alles.
+</p>
+
+<h3>Zeitraum</h3>
+<p>
+  Grenze die Suche auf bestimmte Jahre ein. Nützlich, wenn du z.&nbsp;B. nur aktuelle Beschlüsse
+  oder historische Entwicklungen sehen willst.
+</p>
+
+<h3>Suchmodus</h3>
+<p>Bestimmt, wie FragEssen Treffer gewichtet:</p>
+<ul>
+  <li><strong>Relevant:</strong> Standardmodus. Die inhaltlich passendsten Textstellen gewinnen, mit leichtem Vorteil für aktuellere Dokumente. Empfohlen für die meisten Fragen.</li>
+  <li><strong>Neuste:</strong> Neuere Protokolle werden stärker gewichtet. Sinnvoll, wenn du den aktuellen Stand zu einem Thema suchst und ältere Erwähnungen weniger wichtig sind.</li>
+  <li><strong>Breit:</strong> Ergebnisse aus möglichst vielen verschiedenen Dokumenten. Gut für Themen, die sich über viele Sitzungen ziehen, und wenn du einen breiten Überblick willst.</li>
+</ul>
+
+<h3>Antwortlänge</h3>
+<ul>
+  <li><strong>Kurz:</strong> Knappe Zusammenfassung in wenigen Sätzen.</li>
+  <li><strong>Normal:</strong> Ausgewogene Antwort mit den wichtigsten Details.</li>
+  <li><strong>Ausführlich:</strong> Detaillierte Antwort mit mehr Kontext und Quellenverweisen.</li>
+</ul>
+
+<h3>Qualität (Modell)</h3>
+<ul>
+  <li><strong>Small:</strong> Schnell, gut für einfache Fragen.</li>
+  <li><strong>Medium:</strong> Bessere Antwortqualität, etwas langsamer.</li>
+  <li><strong>Large 🔑:</strong> Höchste Qualität (nur mit Zugangscode).</li>
+</ul>
+
+<h3>Anzahl Quellen (top_k)</h3>
+<p>
+  Bestimmt, wie viele Textabschnitte aus den Protokollen als Kontext herangezogen werden.
+  Mehr Quellen = breiterer Überblick, aber ggf. langsamer.
+</p>
+
+<h3>Filter merken</h3>
+<p>
+  Aktiviert gespeicherte Filtereinstellungen. Deine Auswahl (Gremium, Zeitraum, Antwortlänge,
+  Qualität, Quellenanzahl, Suchmodus) wird im Browser abgelegt und beim nächsten Besuch
+  automatisch wieder gesetzt. Nur lokal in deinem Browser, kein Server-Speicher.
+</p>
+
+<h3>Zugangscode</h3>
+<p>
+  Ein Zugangscode (🔑 oben rechts) hebt das Anfragelimit auf und schaltet die höchste
+  Antwortqualität („Large") frei. Codes sind kein Muss – FragEssen ist auch ohne Code nutzbar,
+  nur mit einem Stundenlimit. Codes können Session- oder dauerhaft geltend sein.
+</p>
+
+<h3>Wichtig: Ein Thema pro Gespräch</h3>
+<p>
+  Die Folgefragen in einem Gespräch bauen aufeinander auf. Wenn du das Thema wechseln möchtest,
+  starte am besten ein <strong>neues Gespräch</strong> über den ↺-Button – so bekommst du bessere
+  Ergebnisse.
+</p>

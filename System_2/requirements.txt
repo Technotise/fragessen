@@ -1,0 +1,17 @@
+# System 2 — direkte Abhängigkeiten
+# Versionen ggf. gegen den Produktionsstand pinnen:
+#   ~/.venv/bin/pip freeze | grep -iE 'fastapi|uvicorn|pydantic|psycopg2|dotenv|mistralai|pymupdf|pypdf|rapidfuzz|requests'
+
+# Web-API (web_api/)
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+psycopg2-binary
+mistralai
+
+# Ingest- und RAG-Pipeline (ingest_work/, rag_work/)
+pymupdf
+pypdf
+rapidfuzz
+requests

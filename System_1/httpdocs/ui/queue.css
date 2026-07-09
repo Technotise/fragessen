@@ -1,0 +1,130 @@
+/* =========================
+   Queue Card
+========================= */
+
+.q-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.q-item {
+  background: var(--ui-card-bg, #fff);
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  box-shadow: var(--ui-card-shadow, 0 6px 18px rgba(0,0,0,.06));
+}
+
+/* =========================
+   Left Content
+========================= */
+
+.q-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.q-row1 {
+  display: flex;
+  gap: 0.9rem;
+  align-items: baseline;
+  font-weight: 500;
+}
+
+.q-id {
+  color: var(--ui-muted);
+  font-size: 0.9rem;
+}
+
+.q-file {
+  flex: 1;
+  font-weight: 600;
+}
+
+.q-gremium {
+  color: var(--ui-muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* =========================
+   Status Pills
+========================= */
+
+.q-row2 {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+.ui-pill {
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.2;
+  border: 1px solid transparent;
+}
+
+.ui-pill.is-done {
+  background: var(--ui-success-bg, #e7f6ee);
+  color: var(--ui-success-fg, #0f5132);
+  border-color: var(--ui-success-border, #b7e4c7);
+}
+
+.ui-pill.is-pending {
+  background: var(--ui-warn-bg, #fff6e5);
+  color: var(--ui-warn-fg, #8a4b00);
+  border-color: var(--ui-warn-border, #ffd59e);
+}
+
+/* =========================
+   Actions
+========================= */
+
+.q-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: flex-end;
+  min-width: 140px;
+}
+
+.q-actions .ui-btn {
+  width: 100%;
+}
+
+.q-actions .ui-link {
+  font-size: 0.85rem;
+}
+
+/* =========================
+   Disabled States
+========================= */
+
+.q-actions [aria-disabled="true"] {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* =========================
+   Dark Theme Overrides
+========================= */
+
+[data-theme="dark"] {
+  --ui-card-bg: #111418;
+  --ui-card-shadow: 0 8px 22px rgba(0,0,0,.45);
+
+  --ui-success-bg: rgba(40, 167, 69, 0.18);
+  --ui-success-fg: #8be3b1;
+  --ui-success-border: rgba(40,167,69,.45);
+
+  --ui-warn-bg: rgba(255, 193, 7, 0.18);
+  --ui-warn-fg: #ffd36a;
+  --ui-warn-border: rgba(255,193,7,.45);
+}

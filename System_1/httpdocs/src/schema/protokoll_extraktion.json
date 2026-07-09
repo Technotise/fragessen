@@ -1,0 +1,132 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "protokoll_extraktion",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "title": "ProtokollExtraktion",
+      "additionalProperties": false,
+      "properties": {
+        "core": {
+          "type": "object",
+          "title": "Core",
+          "additionalProperties": false,
+          "properties": {
+            "niederschrift_nr": {
+              "type": "string",
+              "description": "Z.B. \"10\" oder \"23\""
+            },
+            "datum": {
+              "type": "string",
+              "description": "ISO Datum im Format YYYY-MM-DD"
+            },
+            "uhrzeit": {
+              "type": "string",
+              "description": "Uhrzeit im Format HH:MM"
+            },
+            "ort": {
+              "type": "string",
+              "description": "Ort der Sitzung, inkl. ggf. Adresse"
+            }
+          },
+          "required": [
+            "niederschrift_nr",
+            "datum",
+            "uhrzeit",
+            "ort"
+          ]
+        },
+        "attendance": {
+          "type": "array",
+          "title": "Attendance",
+          "description": "Liste der Teilnehmenden und Fehlenden",
+          "items": {
+            "type": "object",
+            "title": "AttendanceEntry",
+            "additionalProperties": false,
+            "properties": {
+              "anrede": {
+                "type": "string",
+                "description": "Erweiterbar. Rohwert aus dem Dokument, z.B. Herr, Frau, Ratsherr, Ratsfrau, Oberbürgermeister, Oberbürgermeisterin, Bürgermeister, Bürgermeisterin."
+              },
+              "titel": {
+                "type": "string",
+                "description": "Freier String (inkl. leer möglich). Beispiele: Dr., Prof. Dr., Dipl.-Ing., Dr. rer. nat."
+              },
+              "nachname": {
+                "type": "string",
+                "description": "Nachname oder zusammengesetzter Nachname (z.B. Mehlkopf-Cao), achte auf ä, ö und ü."
+              },
+              "rolle": {
+                "type": "string",
+                "enum": [
+                  "Vorsitz",
+                  "Mitglied",
+                  "Mitglied des Rates",
+                  "Verwaltung",
+                  "Schriftführer",
+                  "Gast",
+                  "Sonstiges",
+                  "Fehlt: entschuldigt",
+                  "Fehlt: unentschuldigt"
+                ],
+                "description": "Rolle der Person im Kontext der Sitzung"
+              },
+              "fraktion_partei": {
+                "type": "string",
+                "description": "Fraktion oder Partei, falls vorhanden (z.B. CDU, SPD, GRÜNE, AfD, FDP). Leerstring wenn nicht vorhanden."
+              },
+              "freitext": {
+                "type": "string",
+                "description": "Zusatzinfos, Funktion, Fachbereich, Zeitangaben, Notizen. Leerstring wenn nicht vorhanden."
+              }
+            },
+            "required": [
+              "anrede",
+              "titel",
+              "nachname",
+              "rolle",
+              "fraktion_partei",
+              "freitext"
+            ]
+          }
+        },
+        "agenda": {
+          "type": "array",
+          "title": "Agenda",
+          "description": "Tagesordnungspunkte",
+          "items": {
+            "type": "object",
+            "title": "AgendaItem",
+            "additionalProperties": false,
+            "properties": {
+              "top": {
+                "type": "string",
+                "description": "TOP Kennung, z.B. 1, 3.A, 24.1, 20.10, 20.15, 24.a, 24.1.a, 24.1.1"
+              },
+              "titel": {
+                "type": "string",
+                "description": "Titel des TOP"
+              },
+              "drucksache": {
+                "type": "string",
+                "description": "Drucksachen-Nr. wenn vorhanden, sonst leer"
+              }
+            },
+            "required": [
+              "top",
+              "titel",
+              "drucksache"
+            ]
+          }
+        }
+      },
+      "required": [
+        "core",
+        "attendance",
+        "agenda"
+      ]
+    }
+  }
+}

@@ -1,0 +1,447 @@
+/* =========================================================
+   Farbpalette
+========================================================= */
+
+:root {
+  --purple: #502379;
+  --purple-dark: #2b0f44;
+  --yellow: #FDC220;
+  --blue: #82D0F4;
+  --green: #1BBE6F;
+  --red: #E63E12;
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Semantische Ableitungen */
+  --ui-bg: var(--white);
+  --ui-bg-soft: rgba(0,0,0,0.03);
+
+  --ui-text: var(--black);
+  --ui-text-muted: rgba(0,0,0,0.65);
+
+  --ui-border: rgba(0,0,0,0.12);
+  --ui-border-soft: rgba(0,0,0,0.08);
+
+  --ui-accent: var(--purple);
+  --ui-accent-soft: rgba(80,35,121,0.14);
+
+  --ui-ok: var(--green);
+  --ui-warn: var(--yellow);
+  --ui-err: var(--red);
+
+  --ui-shadow: 0 1px 10px rgba(0,0,0,0.06);
+}
+
+html[data-theme="dark"] {
+  --ui-bg: #0f1115;
+  --ui-bg-soft: rgba(255,255,255,0.05);
+
+  --ui-text: rgba(255,255,255,0.92);
+  --ui-text-muted: rgba(255,255,255,0.68);
+
+  --ui-border: rgba(255,255,255,0.14);
+  --ui-border-soft: rgba(255,255,255,0.09);
+
+  --ui-accent: var(--blue);
+  --ui-accent-soft: rgba(130,208,244,0.16);
+
+  --ui-shadow: 0 1px 14px rgba(0,0,0,0.42);
+}
+
+html[data-theme="light"] {
+  --ui-bg: var(--white);
+  --ui-bg-soft: rgba(0,0,0,0.03);
+
+  --ui-text: var(--black);
+  --ui-text-muted: rgba(0,0,0,0.65);
+
+  --ui-border: rgba(0,0,0,0.12);
+  --ui-border-soft: rgba(0,0,0,0.08);
+
+  --ui-accent: var(--purple);
+  --ui-accent-soft: rgba(80,35,121,0.14);
+
+  --ui-shadow: 0 1px 10px rgba(0,0,0,0.06);
+}
+
+/* =========================================================
+   Dark Mode
+========================================================= */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ui-bg: #0f1115;
+    --ui-bg-soft: rgba(255,255,255,0.05);
+
+    --ui-text: rgba(255,255,255,0.92);
+    --ui-text-muted: rgba(255,255,255,0.68);
+
+    --ui-border: rgba(255,255,255,0.14);
+    --ui-border-soft: rgba(255,255,255,0.09);
+
+    --ui-accent: var(--blue);
+    --ui-accent-soft: rgba(130,208,244,0.16);
+
+    --ui-shadow: 0 1px 14px rgba(0,0,0,0.42);
+  }
+}
+
+/* =========================================================
+   Reset
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--ui-bg);
+  color: var(--ui-text);
+}
+
+/* =========================================================
+   Topbar und Navigation
+========================================================= */
+
+.ui-topbar {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(
+    135deg,
+    var(--ui-accent-soft),
+    transparent
+  );
+  border-bottom: 1px solid var(--ui-border-soft);
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+.ui-topbar-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0.9rem 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui-brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--ui-accent);
+}
+
+.ui-nav {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ui-nav-link {
+  text-decoration: none;
+  color: var(--ui-text);
+  padding: 0.35rem 0.55rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.ui-nav-link:hover {
+  background: var(--ui-bg-soft);
+  border-color: var(--ui-border-soft);
+}
+
+.ui-nav-link.is-active {
+  background: var(--ui-accent-soft);
+  border-color: var(--ui-accent);
+}
+
+.ui-user {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.ui-user-name {
+  color: var(--ui-text-muted);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   Layout
+========================================================= */
+
+.ui-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem 2.2rem;
+}
+
+.ui-page-title {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   Boxen
+========================================================= */
+
+.ui-box {
+  padding: 1rem;
+  border: 1px solid var(--ui-border);
+  border-radius: 14px;
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow);
+  margin-bottom: 1rem;
+}
+
+.ui-box h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.15rem;
+}
+
+/* =========================================================
+   Formulare
+========================================================= */
+
+.ui-label {
+  display: block;
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  color: var(--ui-text-muted);
+}
+
+.ui-input,
+.ui-select {
+  width: 100%;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid var(--ui-border);
+  border-radius: 12px;
+  background: var(--ui-bg);
+  color: var(--ui-text);
+}
+
+.ui-input:focus,
+.ui-select:focus {
+  outline: none;
+  border-color: var(--ui-accent);
+}
+
+.ui-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.ui-btn {
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--ui-border);
+  background: var(--ui-bg);
+  color: var(--ui-text);
+  cursor: pointer;
+}
+
+.ui-btn:hover {
+  background: var(--ui-bg-soft);
+}
+
+/* =========================================================
+   Tabellen
+========================================================= */
+
+.ui-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ui-table th,
+.ui-table td {
+  padding: 0.55rem;
+  border-bottom: 1px solid var(--ui-border-soft);
+  text-align: left;
+  vertical-align: top;
+}
+
+.ui-table td input[name^="title"] {
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   Status und Texte
+========================================================= */
+
+.ui-muted {
+  color: var(--ui-text-muted);
+  font-size: 0.95rem;
+}
+
+.ui-ok {
+  color: var(--ui-ok);
+}
+
+.ui-err {
+  color: var(--ui-err);
+}
+
+/* =========================================================
+   Pills
+========================================================= */
+
+.ui-pill {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--ui-border);
+  background: var(--ui-bg);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.ui-pill.is-done {
+  border-color: var(--ui-ok);
+}
+
+.ui-pill.is-pending {
+  border-color: var(--ui-warn);
+}
+
+/* =========================================================
+   Links und Aktionen
+========================================================= */
+
+.ui-link {
+  text-decoration: none;
+  color: var(--ui-accent);
+}
+
+.ui-link:hover {
+  text-decoration: underline;
+}
+
+.ui-actions-inline {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   Table Wrapper und Queue Feinlayout
+========================================================= */
+
+.ui-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 14px;
+}
+
+.ui-table {
+  min-width: 980px;
+}
+
+.ui-table th {
+  white-space: nowrap;
+}
+
+.ui-td-file {
+  max-width: 520px;
+  word-break: break-word;
+}
+
+.ui-td-actions {
+  width: 140px;
+  white-space: normal;
+}
+
+.ui-actions-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .ui-table {
+    min-width: 860px;
+  }
+  .ui-td-file {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ui-table {
+    min-width: 760px;
+  }
+}
+
+.att-name-grid{
+  display:grid;
+  grid-template-columns: 100px 140px 1fr;
+  gap: .6rem;
+  align-items:center;
+  width: 100%;
+}
+
+.att-name-grid .ui-select{
+  width: 100%;
+}
+
+.att-name-grid .ui-input{
+  width: 100%;
+  min-width: 0; /* wichtig, damit 1fr wirklich schrumpfen darf */
+}
+
+/* Mobile: in zwei Zeilen aufteilen */
+@media (max-width: 900px){
+  .att-name-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  .att-name-grid .att-lastname{
+    grid-column: 1 / -1;
+  }
+}
+
+/* In ui/admin.css ergänzen */
+
+.ui-modal { position: fixed; inset: 0; z-index: 9999; }
+.ui-modal[hidden] { display: none; }
+
+.ui-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.ui-modal-card {
+  position: relative;
+  max-width: 680px;
+  margin: 10vh auto;
+  background: var(--ui-bg);
+  color: var(--ui-text);
+  border: 1px solid var(--ui-border);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: var(--ui-shadow);
+}
+
+.log-main {
+  cursor: pointer;
+}
+
+.log-details {
+  display: none;
+  background: #f7f7f7;
+}
+
+.log-details.open {
+  display: table-row;
+}
+
